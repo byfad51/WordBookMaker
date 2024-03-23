@@ -1,0 +1,6 @@
+@UserSaver_HostAddress = http://localhost:5031
+
+GET {{UserSaver_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,15 @@
+/Users/fatih/RiderProjects/UserSaver/Repositories/bin/Debug/net8.0/Repositories.deps.json
+/Users/fatih/RiderProjects/UserSaver/Repositories/bin/Debug/net8.0/Repositories.dll
+/Users/fatih/RiderProjects/UserSaver/Repositories/bin/Debug/net8.0/Repositories.pdb
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.GeneratedMSBuildEditorConfig.editorconfig
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.AssemblyInfoInputs.cache
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.AssemblyInfo.cs
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.csproj.CoreCompileInputs.cache
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.dll
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/refint/Repositories.dll
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.pdb
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/ref/Repositories.dll
+/Users/fatih/RiderProjects/UserSaver/Repositories/bin/Debug/net8.0/Entities.dll
+/Users/fatih/RiderProjects/UserSaver/Repositories/bin/Debug/net8.0/Entities.pdb
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.csproj.AssemblyReference.cache
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.csproj.CopyComplete
