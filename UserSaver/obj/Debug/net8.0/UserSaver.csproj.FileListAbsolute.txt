@@ -121,3 +121,4 @@
 /Users/fatih/RiderProjects/UserSaver/UserSaver/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/fatih/RiderProjects/UserSaver/UserSaver/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/fatih/RiderProjects/UserSaver/UserSaver/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/fatih/RiderProjects/UserSaver/UserSaver/obj/Debug/net8.0/UserSaver.sourcelink.json

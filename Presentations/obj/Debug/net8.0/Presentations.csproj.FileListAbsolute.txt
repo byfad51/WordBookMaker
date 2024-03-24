@@ -17,3 +17,4 @@
 /Users/fatih/RiderProjects/UserSaver/Presentations/obj/Debug/net8.0/Presentations.csproj.CopyComplete
 /Users/fatih/RiderProjects/UserSaver/Presentations/bin/Debug/net8.0/Repositories.dll
 /Users/fatih/RiderProjects/UserSaver/Presentations/bin/Debug/net8.0/Repositories.pdb
+/Users/fatih/RiderProjects/UserSaver/Presentations/obj/Debug/net8.0/Presentations.sourcelink.json

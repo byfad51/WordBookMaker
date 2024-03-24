@@ -15,3 +15,4 @@
 /Users/fatih/RiderProjects/UserSaver/Services/obj/Debug/net8.0/Services.csproj.CopyComplete
 /Users/fatih/RiderProjects/UserSaver/Services/bin/Debug/net8.0/Repositories.dll
 /Users/fatih/RiderProjects/UserSaver/Services/bin/Debug/net8.0/Repositories.pdb
+/Users/fatih/RiderProjects/UserSaver/Services/obj/Debug/net8.0/Services.sourcelink.json

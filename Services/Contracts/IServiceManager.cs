@@ -5,4 +5,6 @@ public interface IServiceManager
     IAuthenticationService AuthenticationService { get; }
     
     IWordService Words { get; }
+    
+    IWordNoteService WordNotes { get; }
 }

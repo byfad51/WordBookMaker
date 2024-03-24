@@ -17,11 +17,10 @@ public class WordNoteRepository:RepositoryBase<WordNote>, IWordNoteRepository
     public void DeleteOneWordNote(WordNote wordNote) => Delete(wordNote);
 
 
-    public async Task<WordNote> GetOneWordNoteById(int id, int wordId, bool trackChanges) =>
-        await FindByCondition(b => b.Id.Equals(wordId) && b.WordId.Equals(wordId),trackChanges).SingleOrDefaultAsync();
-
-    public async Task<IQueryable<WordNote>> GetAllWordNotesById(int wordId, bool trackChanges) =>
-         FindByCondition(b => b.WordId.Equals(wordId), trackChanges).AsSingleQuery();
+    public async Task<WordNote> GetOneWordNoteById(int id, bool trackChanges) =>
+        await FindByCondition(b => b.Id.Equals(id), trackChanges).SingleOrDefaultAsync();
+    public async Task<List<WordNote>> GetAllWordNotesByWordId(int wordId, bool trackChanges) =>
+         await FindByCondition(b => b.WordId.Equals(wordId), trackChanges).ToListAsync();
 
     public async Task<List<WordNote>> GetAllWordNotes(bool trackChanges) => await FindAll(trackChanges).ToListAsync();
     

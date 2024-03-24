@@ -8,7 +8,7 @@ public interface IWordNoteRepository
     void UpdateOneWordNote(WordNote wordNote, bool trackChanges);
     void DeleteOneWordNote(WordNote wordNote);
 
-    Task<WordNote> GetOneWordNoteById(int id, int wordId, bool trackChanges);
-    Task<IQueryable<WordNote>> GetAllWordNotesById(int wordId, bool trackChanges);
+    Task<WordNote> GetOneWordNoteById(int id, bool trackChanges);
+    Task<List<WordNote>> GetAllWordNotesByWordId(int wordId, bool trackChanges);
     Task<List<WordNote>> GetAllWordNotes(bool trackChanges);
 }

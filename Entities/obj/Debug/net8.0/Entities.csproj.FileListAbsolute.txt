@@ -10,3 +10,4 @@
 /Users/fatih/RiderProjects/UserSaver/Entities/obj/Debug/net8.0/Entities.pdb
 /Users/fatih/RiderProjects/UserSaver/Entities/obj/Debug/net8.0/ref/Entities.dll
 /Users/fatih/RiderProjects/UserSaver/Entities/obj/Debug/net8.0/Entities.csproj.AssemblyReference.cache
+/Users/fatih/RiderProjects/UserSaver/Entities/obj/Debug/net8.0/Entities.sourcelink.json

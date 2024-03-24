@@ -13,3 +13,4 @@
 /Users/fatih/RiderProjects/UserSaver/Repositories/bin/Debug/net8.0/Entities.pdb
 /Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.csproj.AssemblyReference.cache
 /Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.csproj.CopyComplete
+/Users/fatih/RiderProjects/UserSaver/Repositories/obj/Debug/net8.0/Repositories.sourcelink.json
