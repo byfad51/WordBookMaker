@@ -17,7 +17,7 @@ public class WordRepository: RepositoryBase<Word>, IWordRepository
 
 
     public async Task<Word> GetOneWordById(int id, bool trackChanges) => 
-        await FindByCondition(b => b.Id.Equals(id),trackChanges).SingleOrDefaultAsync();
+        await FindByCondition(b => b.WordId.Equals(id),trackChanges).SingleOrDefaultAsync();
 
     public async Task<List<Word>> GetAllWords(bool trackChanges)
         => await FindAll(false).ToListAsync();
@@ -26,18 +26,18 @@ public class WordRepository: RepositoryBase<Word>, IWordRepository
 
     public async Task<PagedList<Word>> GetAllWords(WordParameters wordParameters, bool trackChanges)
     {
-        var words = await FindAll(false).OrderBy(b => b.Id).ToListAsync();
+        var words = await FindAll(false).OrderBy(b => b.WordId).ToListAsync();
         var pagedWords = PagedList<Word>.ToPagedList(words,wordParameters.PageNumber,wordParameters.PageSize);
         return pagedWords;
     }
 
     public async Task<PagedList<Word>> GetAllWordsDetailed(WordParameters wordParameters, bool trackChanges)
     {
-        var words = await FindAll(false).OrderBy(b => b.Id).Include(b=> b.Notes).ToListAsync();
+        var words = await FindAll(false).OrderBy(b => b.WordId).Include(b=> b.Notes).ToListAsync();
         var pagedWords = PagedList<Word>.ToPagedList(words,wordParameters.PageNumber,wordParameters.PageSize);
         return pagedWords;    }
 
     public async Task<Word> GetOneWordWithNotesById(int id, bool trackChanges)
-    => await FindByCondition(b => b.Id.Equals(id),trackChanges).Include(b=> b.Notes)
+    => await FindByCondition(b => b.WordId.Equals(id),trackChanges).Include(b=> b.Notes)
         .SingleOrDefaultAsync();
 }

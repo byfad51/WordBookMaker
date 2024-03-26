@@ -91,24 +91,28 @@ namespace UserSaver.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ca1c76b8-a42f-4d3e-872b-cbe61a36e147",
+                            Id = "9fcae608-6269-4357-a3a2-79b1420e8028",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0c4c1d9a-6091-4ba8-a8fc-b73890bbd312",
+                            ConcurrencyStamp = "96065a57-56f3-4d49-a20f-dda4eac58d2d",
                             EmailConfirmed = false,
                             FirstName = "Mehmet",
                             LastName = "Ali",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ce944396-2047-42a5-bbee-26e58b696e9c",
+                            SecurityStamp = "73ca5b75-8663-48a3-a4fa-75c665908511",
                             TwoFactorEnabled = false
                         });
                 });
 
             modelBuilder.Entity("Entities.Models.Word", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("WordId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("EnglishWord")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("TurkishMean")
                         .IsRequired()
@@ -117,25 +121,25 @@ namespace UserSaver.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("WordId");
 
                     b.ToTable("Words");
                 });
 
             modelBuilder.Entity("Entities.Models.WordNote", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("WordNoteId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int>("WordId")
                         .HasColumnType("int");
 
-                    b.Property<string>("WordSentence")
+                    b.Property<string>("WordNoteSentence")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("WordNoteId");
 
                     b.HasIndex("WordId");
 
@@ -170,25 +174,25 @@ namespace UserSaver.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0dddb23e-5d59-413c-ae61-8fb733fd2849",
+                            Id = "d1abfbab-2d56-46d4-b401-b7d56a545395",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "ca33917f-b93b-4f07-9fac-c0995f0cfda2",
+                            Id = "177f1423-cd07-4970-95ca-86bc3cb2ef4f",
                             Name = "BronzeUser",
                             NormalizedName = "BRONZE_USER"
                         },
                         new
                         {
-                            Id = "22720ff2-a115-46fe-8501-fd668f501bd8",
+                            Id = "dfc974f8-b265-44c8-91e4-26b87db49e02",
                             Name = "SilverUser",
                             NormalizedName = "SILVER_USER"
                         },
                         new
                         {
-                            Id = "775f3e59-7b22-48cd-a871-204a15250563",
+                            Id = "c13ce81c-bcf0-4827-b24f-2755f497da46",
                             Name = "GoldUser",
                             NormalizedName = "GOLD_USER"
                         });

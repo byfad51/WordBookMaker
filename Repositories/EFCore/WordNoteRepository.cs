@@ -18,7 +18,7 @@ public class WordNoteRepository:RepositoryBase<WordNote>, IWordNoteRepository
 
 
     public async Task<WordNote> GetOneWordNoteById(int id, bool trackChanges) =>
-        await FindByCondition(b => b.Id.Equals(id), trackChanges).SingleOrDefaultAsync();
+        await FindByCondition(b => b.WordNoteId.Equals(id), trackChanges).SingleOrDefaultAsync();
     public async Task<List<WordNote>> GetAllWordNotesByWordId(int wordId, bool trackChanges) =>
          await FindByCondition(b => b.WordId.Equals(wordId), trackChanges).ToListAsync();
 

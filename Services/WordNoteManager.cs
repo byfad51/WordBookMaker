@@ -34,7 +34,7 @@ public class WordNoteManager : IWordNoteService
     {
         if(wordNote is null)
             throw new Exception("WordNote not needed exception.");
-        var entity =await _manager.WordNote.GetOneWordNoteById(wordNote.Id, false);
+        var entity =await _manager.WordNote.GetOneWordNoteById(wordNote.WordNoteId, false);
         if(entity is null)
             throw new Exception("WordNote not found exception.");
 
@@ -47,7 +47,7 @@ public class WordNoteManager : IWordNoteService
     {
         if(wordNote is null)
             throw new Exception("WordNote not needed exception.");
-        var entity =await _manager.WordNote.GetOneWordNoteById(wordNote.Id, false);
+        var entity =await _manager.WordNote.GetOneWordNoteById(wordNote.WordNoteId, false);
         if(entity is null)
             throw new Exception("WordNote not found exception.");
         _manager.WordNote.UpdateOneWordNote(wordNote,true);

@@ -1,3 +1,5 @@
+using System.Text.Json;
+using Entities.DataTransferObjects;
 using Entities.Models;
 using Entities.RequestFeatures;
 using Microsoft.AspNetCore.Mvc;
@@ -17,22 +19,29 @@ public class WordController:ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddOneWordWithId([FromBody] Word word)
+    public async Task<IActionResult> AddOneWordWithId([FromBody] WordForDto wordForDto)
     {
-        await _service.Words.CreateOneWord(word);
-        return Ok(word);
+        var entity = await _service.Words.CreateOneWord(wordForDto);
+        return Ok(entity);
     }
     
     [HttpGet]
     public async Task<IActionResult> GetAllWordsPaged([FromQuery] WordParameters wordParameters)
     {
-        return Ok(await _service.Words.GetAllWords(wordParameters,false));
-    }
+        
+        var result = await _service.Words.GetAllWords(wordParameters, false);
+        Response.Headers.Add("X-Pagination", 
+            JsonSerializer.Serialize(result.MetaData));
+        return Ok(result);
+    } 
     
-    [HttpGet("/details")]
+    [HttpGet("details")]
     public async Task<IActionResult> GetAllWordsDetailedPaged([FromQuery] WordParameters wordParameters)
     {
-        return Ok(await _service.Words.GetAllWordsDetailed(wordParameters,false));
+        var result = await _service.Words.GetAllWordsDetailed(wordParameters, false);
+        Response.Headers.Add("X-Pagination", 
+            JsonSerializer.Serialize(result.MetaData));
+        return Ok(result);
     }
     
     [HttpGet("{id:int}")]
