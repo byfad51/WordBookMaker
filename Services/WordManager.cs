@@ -24,10 +24,12 @@ public class WordManager : IWordService
     {
         var entities = await _manager.Word.GetAllWords(wordParameters, trackChanges);
 
-        var responseEntities = _mapper.Map<IEnumerable<WordResponseForDto>>(entities);
-        var list = PagedList<WordResponseForDto>.ToPagedList(responseEntities, wordParameters.PageNumber,wordParameters.PageSize);
-        return list;
-    } // THERE IS AN ERROR
+        var responseEntities = entities.Select(word => _mapper.Map<WordResponseForDto>(word)).ToList();
+
+        var responsePagedList = new PagedList<WordResponseForDto>(responseEntities,entities.MetaData.TotalSize,wordParameters.PageNumber,wordParameters.PageSize);
+        //var list = PagedList<WordResponseForDto>.ToPagedList(responseEntities, wordParameters.PageNumber,wordParameters.PageSize);
+        return responsePagedList;
+    }
 
     public async Task<PagedList<Word>> GetAllWordsDetailed(WordParameters wordParameters, bool trackChanges)
     {
