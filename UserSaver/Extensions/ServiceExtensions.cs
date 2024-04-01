@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Presentations.ActionFilters;
 using Repositories;
 using Repositories.Contracts;
 using Services;
@@ -61,4 +62,13 @@ public static class ServiceExtensions
                 };
             });
     }
+    
+    public static void ConfigureLoggerService(this IServiceCollection services) => 
+        services.AddSingleton<ILoggerService, LoggerManager>();
+
+    public static void ConfigureActionFilters(this IServiceCollection services)
+    {
+        services.AddScoped<ValidationFilterAttribute>();
+        services.AddSingleton<LogFilterAttribute>();
+    } 
 }

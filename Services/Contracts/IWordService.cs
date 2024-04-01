@@ -10,8 +10,8 @@ public interface IWordService
     Task<PagedList<Word>> GetAllWordsDetailed(WordParameters wordParameters, bool trackChanges);
 
     Task<WordForDto> CreateOneWord(WordForDto wordForDto);
-    void DeleteOneWord(Word word);
-    void UpdateOneWord(Word word, bool trackChanges);
+    Task DeleteOneWord(int wordId);
+    Task UpdateOneWord(int id, WordForDto wordForDto, bool trackChanges);
 
     Task<WordResponseForDto> GetOneWordById(int id, bool trackChanges);
 

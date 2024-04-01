@@ -1,10 +1,16 @@
+using Entities.Exceptions;
 using Entities.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Presentations.ActionFilters;
 using Services.Contracts;
 
 namespace UserSaver;
+
+//[Authorize]
 [ApiController]
 [Route("/api/wordnotes")]
+[ServiceFilter(typeof(LogFilterAttribute))]
 
 public class WordNoteController : ControllerBase
 {
@@ -23,6 +29,8 @@ public class WordNoteController : ControllerBase
     }
 
     [HttpPost]
+    //[ServiceFilter(typeof(ValidationFilterAttribute))]
+
     public async Task<IActionResult> CreateOneWordNote(WordNote wordNote)
     {
         await _service.WordNotes.CreateOneWordNote(wordNote);
@@ -35,4 +43,21 @@ public class WordNoteController : ControllerBase
         var entity =await _service.WordNotes.GetOneWordNoteById(id,false);
         return Ok(entity);
     }
+    [HttpDelete]
+   
+    public IActionResult DeleteOneWordNote(WordNote wordNote)
+    {
+        _service.WordNotes.DeleteOneWordNote(wordNote);
+        return NoContent();
+    }
+    [HttpPut]
+    public async Task<IActionResult> UpdateOneWordNote(WordNote wordNote)
+    {
+        var entity =await  _service.WordNotes.GetOneWordNoteById(wordNote.WordNoteId,false);
+        if (wordNote.WordNoteId != entity.WordNoteId)
+            throw new WordNoteBadUpdateRequestException(wordNote.WordId);
+        await _service.WordNotes.UpdateOneWordNote(wordNote, false);
+        return Ok(wordNote);
+    }
+
 }

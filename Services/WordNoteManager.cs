@@ -43,11 +43,11 @@ public class WordNoteManager : IWordNoteService
         // saveasync i kontrol et bi
     }
 
-    public async Task UpdateOneWordNote(WordNote wordNote)
+    public async Task UpdateOneWordNote(WordNote wordNote, bool trackChanges)
     {
         if(wordNote is null)
             throw new Exception("WordNote not needed exception.");
-        var entity =await _manager.WordNote.GetOneWordNoteById(wordNote.WordNoteId, false);
+        var entity =await _manager.WordNote.GetOneWordNoteById(wordNote.WordNoteId, trackChanges);
         if(entity is null)
             throw new Exception("WordNote not found exception.");
         _manager.WordNote.UpdateOneWordNote(wordNote,true);

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Sp0ol6KwxUXeCKBOvwgpV3eE0dSi5wVf/30I+1VAyN3qdPWSszrnXlCJVVQmaoZFy73wMlDWphtD/+of+kfy0g==",
+  "dgSpecHash": "G/sdZ9sknyV7Cj16Z8errIgit8K/MF7ZruVOsdYKheurHrff7KkzlENT+HeZ9U7s1aJKGNz6nUqPqXaKXK4qMA==",
   "success": true,
   "projectFilePath": "/Users/fatih/RiderProjects/UserSaver/Presentations/Presentations.csproj",
   "expectedPackageFiles": [
@@ -54,6 +54,8 @@
     "/Users/fatih/.nuget/packages/microsoft.netcore.platforms/1.0.1/microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "/Users/fatih/.nuget/packages/microsoft.netcore.targets/1.0.1/microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "/Users/fatih/.nuget/packages/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg.sha512",
+    "/Users/fatih/.nuget/packages/nlog/5.0.5/nlog.5.0.5.nupkg.sha512",
+    "/Users/fatih/.nuget/packages/nlog.extensions.logging/5.1.0/nlog.extensions.logging.5.1.0.nupkg.sha512",
     "/Users/fatih/.nuget/packages/runtime.native.system/4.0.0/runtime.native.system.4.0.0.nupkg.sha512",
     "/Users/fatih/.nuget/packages/system.appcontext/4.1.0/system.appcontext.4.1.0.nupkg.sha512",
     "/Users/fatih/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",

@@ -1,6 +1,7 @@
 using System.Globalization;
 using AutoMapper;
 using Entities.DataTransferObjects;
+using Entities.Exceptions;
 using Entities.Models;
 using Entities.RequestFeatures;
 using Repositories.Contracts;
@@ -47,26 +48,28 @@ public class WordManager : IWordService
         return _mapper.Map<WordForDto>(entity);
     }
 
-    public void DeleteOneWord(Word word)
+    public async Task DeleteOneWord(int wordId)
     {
-        var entity = _manager.Word.GetOneWordById(word.WordId,false);
+        var entity = await _manager.Word.GetOneWordById(wordId,false);
         if (entity is null)
-            throw new Exception("Word not found");
-
-        _manager.Word.DeleteOneWord(word);
+            throw new WordNotFoundException(wordId);
+    
+        _manager.Word.DeleteOneWord(entity);
+        await _manager.SaveAsync();
     }
 
   
 
-    public void UpdateOneWord(Word word, bool trackChanges)
+    public async Task UpdateOneWord(int id, WordForDto wordForDto, bool trackChanges)
     {
-        if(word is null)
+        if(wordForDto is null)
             throw new Exception("Null word error!");
-        var entity = _manager.Word.GetOneWordById(word.WordId,trackChanges);
+        var entity = await _manager.Word.GetOneWordById(id,trackChanges);
         if (entity is null)
-            throw new Exception("Word not found");
-        
-        _manager.Word.UpdateOneWord(word);
+            throw new WordNotFoundException(id);
+        var newWord = _mapper.Map<Word>(wordForDto);
+        _manager.Word.UpdateOneWord(newWord);
+        await _manager.SaveAsync();
     }
 
  
@@ -75,7 +78,7 @@ public class WordManager : IWordService
     {
         var entity = await _manager.Word.GetOneWordById(id,trackChanges);
         if (entity is null)
-            throw new Exception("Word not found"); 
+            throw new WordNotFoundException(id); 
         var entityDto = _mapper.Map<WordResponseForDto>(entity);
 
         return entityDto;

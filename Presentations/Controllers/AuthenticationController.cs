@@ -1,9 +1,11 @@
 using Entities.DataTransferObjects;
 using Microsoft.AspNetCore.Mvc;
+using Presentations.ActionFilters;
 using Services.Contracts;
 
 namespace UserSaver;
 
+[ServiceFilter(typeof(LogFilterAttribute))]
 [ApiController]
 [Route("api/authentication")]
 public class AuthenticationController : ControllerBase

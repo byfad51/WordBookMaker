@@ -14,12 +14,17 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigureMysqlContext(builder.Configuration);
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
+builder.Services.ConfigureLoggerService();
 builder.Services.AddAuthentication();
 builder.Services.ConfigureIdentity();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
+builder.Services.ConfigureActionFilters();
 builder.Services.ConfigureJWT(builder.Configuration);
 var app = builder.Build();
+
+var logger = app.Services.GetRequiredService<ILoggerService>();
+app.ConfigureExceptionHandler(logger);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

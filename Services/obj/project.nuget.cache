@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1r4WnmXQqim/8C0Z3dlh2nXmn8iQeI/4JFMllr/zl/ZgfKVMHNcTBPWupOg0t4Yt/uzbsHheuktrWDw0erCwhw==",
+  "dgSpecHash": "7sV04XZq0csmg4gA1dSqf+fMGM/Y5dgWE8g2UZjiask5YPlwl2+M+0qj7HbGE/ohljdpm90zAsPM0l8rt/D2Ag==",
   "success": true,
   "projectFilePath": "/Users/fatih/RiderProjects/UserSaver/Services/Services.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,8 @@
     "/Users/fatih/.nuget/packages/microsoft.identitymodel.jsonwebtokens/7.0.3/microsoft.identitymodel.jsonwebtokens.7.0.3.nupkg.sha512",
     "/Users/fatih/.nuget/packages/microsoft.identitymodel.logging/7.0.3/microsoft.identitymodel.logging.7.0.3.nupkg.sha512",
     "/Users/fatih/.nuget/packages/microsoft.identitymodel.tokens/7.0.3/microsoft.identitymodel.tokens.7.0.3.nupkg.sha512",
+    "/Users/fatih/.nuget/packages/nlog/5.0.5/nlog.5.0.5.nupkg.sha512",
+    "/Users/fatih/.nuget/packages/nlog.extensions.logging/5.1.0/nlog.extensions.logging.5.1.0.nupkg.sha512",
     "/Users/fatih/.nuget/packages/system.identitymodel.tokens.jwt/7.0.3/system.identitymodel.tokens.jwt.7.0.3.nupkg.sha512"
   ],
   "logs": [

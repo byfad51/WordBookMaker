@@ -1,15 +1,21 @@
 using System.Text.Json;
 using Entities.DataTransferObjects;
+using Entities.Exceptions;
 using Entities.Models;
 using Entities.RequestFeatures;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Presentations.ActionFilters;
 using Services.Contracts;
 
 namespace UserSaver;
-
+//[Authorize]
 [ApiController]
 [Route("api/words")]
-public class WordController:ControllerBase
+[ServiceFilter(typeof(LogFilterAttribute))]
+
+
+public class WordController : ControllerBase
 {
     private readonly IServiceManager _service;
 
@@ -19,8 +25,9 @@ public class WordController:ControllerBase
     }
 
     [HttpPost]
+    [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> AddOneWordWithId([FromBody] WordForDto wordForDto)
-    {
+    { 
         var entity = await _service.Words.CreateOneWord(wordForDto);
         return Ok(entity);
     }
@@ -57,4 +64,21 @@ public class WordController:ControllerBase
     {
         return Ok(await _service.Words.GetOneWordWithNotesById(id, false));
     }
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteOneWord([FromRoute(Name = "id")]int id)
+    {
+        await _service.Words.DeleteOneWord(id);
+        return NoContent();
+    }
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateOneWord([FromRoute(Name = "id")]int id, [FromBody]WordForDto wordForDto)
+    {
+        var entity =await _service.Words.GetOneWordById(id,false);
+        if (wordForDto.WordId != entity.WordId)
+            throw new WordBadUpdateRequestException(wordForDto.WordId);
+        await _service.Words.UpdateOneWord(id, wordForDto, false);
+        return Ok(wordForDto);
+    }
+
+    
 }

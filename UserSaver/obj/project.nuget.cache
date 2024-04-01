@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OSmcWfXUK4yoosdXo8oViPWw/1joKwGgnOwlF7iwS03RTdjicxalj/mBZyMgUjA1RuTC/8nCTZKsIjGAbmNFcA==",
+  "dgSpecHash": "I/dh3qWuiy8Pet6LjJHeQaome5w86VflupwrWUYJJcgvU1Eh0Iq9o+nsLiP+ewHu15WZv6TkXsVSfS21oz77fQ==",
   "success": true,
   "projectFilePath": "/Users/fatih/RiderProjects/UserSaver/UserSaver/UserSaver.csproj",
   "expectedPackageFiles": [
@@ -65,6 +65,8 @@
     "/Users/fatih/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/Users/fatih/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/fatih/.nuget/packages/mysqlconnector/2.3.5/mysqlconnector.2.3.5.nupkg.sha512",
+    "/Users/fatih/.nuget/packages/nlog/5.0.5/nlog.5.0.5.nupkg.sha512",
+    "/Users/fatih/.nuget/packages/nlog.extensions.logging/5.1.0/nlog.extensions.logging.5.1.0.nupkg.sha512",
     "/Users/fatih/.nuget/packages/pomelo.entityframeworkcore.mysql/8.0.0/pomelo.entityframeworkcore.mysql.8.0.0.nupkg.sha512",
     "/Users/fatih/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/fatih/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
